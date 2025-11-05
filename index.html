@@ -1,59 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>eh</title>
-  <style>
-    body {
-      background-color: black;
-      height: 100vh;
-      margin: 0;
-      cursor: pointer;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .ripple {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-      pointer-events: none;
-      transform: scale(0);
-      opacity: 0.3;
-      animation: ripple-animation 0.6s ease-out forwards;
-    }
-
-    @keyframes ripple-animation {
-      to {
-        transform: scale(20);
-        opacity: -0.9;
-      }
-    }
-  </style>
-</head>
-<body>
-  <script>
-    const clickSound = new Audio('eh.wav');
-
-    document.body.addEventListener('click', (e) => {
-      // Play sound
-      clickSound.currentTime = 0;
-      clickSound.play().catch(err => console.error('Playback failed:', err));
-
-      // Create ripple element
-      const ripple = document.createElement('span');
-      ripple.classList.add('ripple');
-      ripple.style.left = `${e.clientX - 10}px`;
-      ripple.style.top = `${e.clientY - 10}px`;
-
-      // Add and remove ripple
-      document.body.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 600);
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eh</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+      <script src="scripts/span.js"></script>
+  </body>
 </html>
-
