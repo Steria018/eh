@@ -3,6 +3,7 @@ const clickSound = new Audio('scripts/eh.wav');
 document.body.addEventListener('click', (e) => {
   // Play sound
   clickSound.currentTime = 0;
+  clickSound.playbackRate = 1;
   clickSound.play().catch(err => console.error('Playback failed:', err));
 
   // Create ripple element
